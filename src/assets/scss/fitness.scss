@@ -1,0 +1,20 @@
+.m-auto {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+.label {
+  color: rgb(37, 37, 37) !important;
+  font-size: 14px !important;
+}
+.info-avatar {
+  width: 124px !important;
+  height: 124px !important;
+  border: 1px solid #d2bdbd;
+  position: relative;
+}
+.fitness .table > thead > tr > th {
+  font-size: 16px;
+}
+.fitness .table-hover > tbody > tr {
+  cursor: pointer;
+}
