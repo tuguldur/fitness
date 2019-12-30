@@ -138,12 +138,12 @@ class Users extends React.Component {
                   <FormGroup>
                     <label>Картны дугаар</label>
                     <Input
-                      value={edit_member.alt_number}
+                      defaultValue={edit_member.alt_number}
                       placeholder="Картны дугаар"
                       name="alt_number"
                       autoComplete="off"
                       required
-                      onChange={event => this.change(event)}
+                      onChange={this.change}
                     />
                   </FormGroup>
                 </Col>
@@ -153,7 +153,7 @@ class Users extends React.Component {
                   <FormGroup>
                     <label>Овог</label>
                     <Input
-                      value={edit_member.lastname}
+                      defaultValue={edit_member.lastname}
                       placeholder="Овог"
                       name="lastname"
                       autoComplete="off"
@@ -166,7 +166,7 @@ class Users extends React.Component {
                   <FormGroup>
                     <label>Нэр</label>
                     <Input
-                      value={edit_member.firstname}
+                      defaultValue={edit_member.firstname}
                       placeholder="Нэр"
                       name="firstname"
                       autoComplete="off"
@@ -181,7 +181,7 @@ class Users extends React.Component {
                   <FormGroup>
                     <label>Утасны дугаар</label>
                     <Input
-                      value={edit_member.phone}
+                      defaultValue={edit_member.phone}
                       placeholder="Утасны дугаар"
                       name="phone"
                       autoComplete="off"
@@ -192,7 +192,7 @@ class Users extends React.Component {
                   <FormGroup>
                     <label>Гэрийн хаяг</label>
                     <Input
-                      value={edit_member.address}
+                      defaultValue={edit_member.address}
                       placeholder="гэрийн хаяг"
                       name="address"
                       autoComplete="off"
@@ -208,7 +208,7 @@ class Users extends React.Component {
                       placeholder="Картны дугаар"
                       className="form-control ml-2"
                       style={{ width: 85 }}
-                      value={edit_member.gender}
+                      defaultValue={edit_member.gender}
                       name="gender"
                       autoComplete="off"
                       required

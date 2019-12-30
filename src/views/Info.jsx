@@ -11,12 +11,43 @@ import {
   Row,
   Col,
   ListGroup,
-  ListGroupItem
+  ListGroupItem,
+  Tooltip
 } from "reactstrap";
 // core components
 import PanelHeader from "components/PanelHeader/PanelHeader.jsx";
 class Info extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      member: "",
+      status: "Хайх утгаа оруулна уу ?",
+      value: ""
+    };
+  }
+  change = e => {
+    var value = e.target.value;
+    this.setState({ value });
+  };
+  check = e => {
+    e.preventDefault();
+    var member = this.state.value;
+    if (member) {
+      this.setState({ member: "", status: "Уншиж байна..." });
+      fetch("/get/code?nfc=" + member)
+        .then(response => response.json())
+        .then(value => {
+          value && value.length
+            ? this.setState({ member: value[0] })
+            : this.setState({ member: "", status: "Хэрэглэгч олдсонгүй" });
+        })
+        .catch(err => this.setState({ status: "Алдаа : " + err }));
+    } else {
+      this.setState({ member: "", status: "Хайх утгаа оруулна уу ?" });
+    }
+  };
   render() {
+    const { member, status } = this.state;
     return (
       <>
         <PanelHeader size="sm" />
@@ -31,80 +62,106 @@ class Info extends React.Component {
                   <Row>
                     <Col md="8">
                       <FormGroup>
-                        <label className="label">
-                          Картын дугаар, утасны дугаар эсвэл картаа уншуулна уу?
-                        </label>
-                        <Input
-                          placeholder="Картын дугаар"
-                          type="text"
-                          defaultValue="XXXXXXXX"
-                        />
+                        <form onSubmit={this.check}>
+                          <label className="label">
+                            Картын дугаар, утасны дугаар эсвэл картаа уншуулна
+                            уу?
+                          </label>
+                          <Input
+                            placeholder="Картын дугаар"
+                            type="number"
+                            onChange={this.change}
+                            autoFocus={true}
+                          />
+                        </form>
                       </FormGroup>
                     </Col>
                   </Row>
                   <hr />
-                  <Row>
-                    <Col md="12">
-                      <h6>Хэрэглэгчийн дугаар: 0987654321</h6>
-                      <hr />
-                    </Col>
-                    <Col md="3" className="d-flex justify-content-center">
-                      <img
-                        alt="..."
-                        className="avatar border-gray info-avatar"
-                        src={require("assets/img/default-avatar.png")}
-                      />
-                    </Col>
-                    <Col md="6">
-                      <div className="mt-2">
-                        <p>
-                          <b>Овог Нэр</b> : Mandakh Gantugs
-                        </p>
-                        <p>
-                          <b>Утасны дугаар</b> : 89111046
-                        </p>
-                        <p>
-                          <b>Бүртгэлийн огноо</b> : 2019-10-15 07:24:37
-                        </p>
-                      </div>
-                    </Col>
-                    <Col md="3">
-                      <Button
-                        color="info"
-                        className="btn-round"
-                        title="Энэхүү сунгалт нь шууд 1 сар сунгадаг учир илүү дэлгэрэнгүй сунгах бол цэснээс сунгалт хийх боломжтой"
-                      >
-                        <i className="now-ui-icons ui-1_simple-add"></i>
-                        Сунгалт
-                      </Button>
-                      <Button color="secondary" className="btn-round">
-                        <i className="now-ui-icons ui-1_simple-remove"></i>
-                        Чөлөөлөх
-                      </Button>
-                    </Col>
-                    <Col md="12">
-                      <hr className="mt-0" />
-                      <h6>Идэвхтэй байгаа үйлчилгээнүүд</h6>
-                      <hr />
-                      <ListGroup>
-                        <ListGroupItem>
-                          <b>Үйлчилгээний төрөл </b> example/ttt
-                          <br />
-                          <small> дуусах хугацаа - 2020-01-21 / Жишээ</small>
-                          <a
-                            href="#"
-                            className="float-right"
-                            style={{
-                              fontSize: "12px",
-                              textTransform: "uppercase"
-                            }}
-                          >
-                            дэлгэрэнгүй
-                          </a>
-                        </ListGroupItem>
-                      </ListGroup>
-                    </Col>
-                  </Row>
+                  {member ? (
+                    <Row>
+                      <Col md="12">
+                        <h6>Хэрэглэгчийн дугаар: {member.alt_number}</h6>
+                        <hr />
+                      </Col>
+                      <Col md="3" className="d-flex justify-content-center">
+                        <img
+                          alt="..."
+                          className="avatar border-gray info-avatar"
+                          src={require("assets/img/default-avatar.png")}
+                        />
+                      </Col>
+                      <Col md="6">
+                        <div className="mt-2">
+                          <p>
+                            <b>Овог Нэр</b> :
+                            {member.lastname + " " + member.firstname}
+                          </p>
+                          <p>
+                            <b>Утасны дугаар</b> : {member.phone}
+                          </p>
+                          <p>
+                            <b>Бүртгэлийн огноо</b> : {member.created_at}
+                          </p>
+                        </div>
+                      </Col>
+                      <Col md="3">
+                        <Button
+                          color="info"
+                          className="btn-round m-1"
+                          onClick={() => alert(member.id)}
+                          title="Энэхүү сунгалт нь шууд 1 сар сунгадаг учир илүү дэлгэрэнгүй сунгах бол цэснээс сунгалт хийх боломжтой"
+                        >
+                          Сунгалт
+                        </Button>
+
+                        <Button
+                          color="secondary"
+                          className="btn-round m-1"
+                          onClick={() => alert(member.id)}
+                        >
+                          Чөлөөлөх
+                        </Button>
+                      </Col>
+                      <Col md="12">
+                        <hr className="mt-0" />
+                        <h6>Идэвхтэй байгаа үйлчилгээнүүд</h6>
+                        <hr />
+                        <ListGroup>
+                          {member.books.map(book => {
+                            return (
+                              <ListGroupItem className="mb-1" key={book.id}>
+                                <b>Үйлчилгээний төрөл </b>{" "}
+                                {book.member_type.title}/
+                                {book.batch.description}
+                                <br />
+                                <small>
+                                  дуусах хугацаа - {book.end_date} /
+                                  {book.batch.name}
+                                </small>
+                                <a
+                                  href="#"
+                                  className="float-right"
+                                  style={{
+                                    fontSize: "12px",
+                                    textTransform: "uppercase"
+                                  }}
+                                >
+                                  дэлгэрэнгүй
+                                </a>
+                              </ListGroupItem>
+                            );
+                          })}
+                        </ListGroup>
+                      </Col>
+                    </Row>
+                  ) : (
+                    <Row>
+                      <Col className="m-3 text-center">
+                        <span>{status}</span>
+                      </Col>
+                    </Row>
+                  )}
                 </CardBody>
               </Card>
             </Col>

@@ -11,12 +11,12 @@ import "assets/scss/fitness.scss";
 import AdminLayout from "layouts/Admin.jsx";
 
 const hist = createBrowserHistory();
-
+const url = window.location.pathname.split("/")[1];
 ReactDOM.render(
   <Router history={hist}>
     <Switch>
       <Route path="/" render={props => <AdminLayout {...props} />} />
-      <Redirect to="/info" />
+      <Redirect to={`${url}/info`} />
     </Switch>
   </Router>,
   document.getElementById("root")

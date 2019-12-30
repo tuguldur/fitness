@@ -58,7 +58,6 @@ class Dashboard extends React.Component {
             })}
             <Redirect from="/" to="/info" />
           </Switch>
-          {/* <Footer fluid /> */}
         </div>
       </div>
     );
