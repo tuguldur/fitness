@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/fitness/static/css/main.01bf7304.chunk.css",
-    "main.js": "/fitness/static/js/main.4e7495ec.chunk.js",
-    "main.js.map": "/fitness/static/js/main.4e7495ec.chunk.js.map",
+    "main.css": "/fitness/static/css/main.bf361e84.chunk.css",
+    "main.js": "/fitness/static/js/main.a224f728.chunk.js",
+    "main.js.map": "/fitness/static/js/main.a224f728.chunk.js.map",
     "runtime~main.js": "/fitness/static/js/runtime~main.98422cc9.js",
     "runtime~main.js.map": "/fitness/static/js/runtime~main.98422cc9.js.map",
     "static/css/2.833dd627.chunk.css": "/fitness/static/css/2.833dd627.chunk.css",
     "static/js/2.64d52a6d.chunk.js": "/fitness/static/js/2.64d52a6d.chunk.js",
     "static/js/2.64d52a6d.chunk.js.map": "/fitness/static/js/2.64d52a6d.chunk.js.map",
     "index.html": "/fitness/index.html",
-    "precache-manifest.76821050f7ad87a8f5313010c13f7ac7.js": "/fitness/precache-manifest.76821050f7ad87a8f5313010c13f7ac7.js",
+    "precache-manifest.de877d1b3a7aa8137f8910adfaf8ef5f.js": "/fitness/precache-manifest.de877d1b3a7aa8137f8910adfaf8ef5f.js",
     "service-worker.js": "/fitness/service-worker.js",
     "static/css/2.833dd627.chunk.css.map": "/fitness/static/css/2.833dd627.chunk.css.map",
-    "static/css/main.01bf7304.chunk.css.map": "/fitness/static/css/main.01bf7304.chunk.css.map",
+    "static/css/main.bf361e84.chunk.css.map": "/fitness/static/css/main.bf361e84.chunk.css.map",
     "static/media/logo-white.svg": "/fitness/static/media/logo-white.a80cd7a7.svg",
     "static/media/now-ui-dashboard.scss": "/fitness/static/media/nucleo-outline.8ebec31f.woff2"
   }
