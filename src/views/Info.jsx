@@ -128,30 +128,36 @@ class Info extends React.Component {
                         <h6>Идэвхтэй байгаа үйлчилгээнүүд</h6>
                         <hr />
                         <ListGroup>
-                          {member.books.map(book => {
-                            return (
-                              <ListGroupItem className="mb-1" key={book.id}>
-                                <b>Үйлчилгээний төрөл </b>{" "}
-                                {book.member_type.title}/
-                                {book.batch.description}
-                                <br />
-                                <small>
-                                  дуусах хугацаа - {book.end_date} /
-                                  {book.batch.name}
-                                </small>
-                                <a
-                                  href="#"
-                                  className="float-right"
-                                  style={{
-                                    fontSize: "12px",
-                                    textTransform: "uppercase"
-                                  }}
-                                >
-                                  дэлгэрэнгүй
-                                </a>
-                              </ListGroupItem>
-                            );
-                          })}
+                          {member.books && member.books.length ? (
+                            member.books.map(book => {
+                              return (
+                                <ListGroupItem className="mb-1" key={book.id}>
+                                  <b>Үйлчилгээний төрөл </b>{" "}
+                                  {book.member_type.title}/
+                                  {book.batch.description}
+                                  <br />
+                                  <small>
+                                    дуусах хугацаа - {book.end_date} /
+                                    {book.batch.name}
+                                  </small>
+                                  <a
+                                    href="#"
+                                    className="float-right"
+                                    style={{
+                                      fontSize: "12px",
+                                      textTransform: "uppercase"
+                                    }}
+                                  >
+                                    дэлгэрэнгүй
+                                  </a>
+                                </ListGroupItem>
+                              );
+                            })
+                          ) : (
+                            <span className="text-center p-1">
+                              Үйлчилгээ идэвхжүүлээгүй байна.
+                            </span>
+                          )}
                         </ListGroup>
                       </Col>
                     </Row>
