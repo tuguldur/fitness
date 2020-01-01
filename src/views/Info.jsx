@@ -5,18 +5,18 @@ import {
   Button,
   Card,
   CardHeader,
+  CardTitle,
   CardBody,
   FormGroup,
   Input,
   Row,
   Col,
   ListGroup,
-  ListGroupItem,
-  Tooltip
+  ListGroupItem
 } from "reactstrap";
 // core components
 import PanelHeader from "components/PanelHeader/PanelHeader.jsx";
-class Info extends React.Component {
+class info extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -56,7 +56,9 @@ class Info extends React.Component {
             <Col md={8} className="m-auto">
               <Card>
                 <CardHeader>
-                  <h5 className="title">Хэрэглэгчийн мэдээлэл шалгах хэсэг</h5>
+                  <CardTitle tag="h4">
+                    Хэрэглэгчийн мэдээлэл шалгах хэсэг
+                  </CardTitle>
                 </CardHeader>
                 <CardBody>
                   <Row>
@@ -141,7 +143,7 @@ class Info extends React.Component {
                                     {book.batch.name}
                                   </small>
                                   <a
-                                    href="#"
+                                    href={book.id}
                                     className="float-right"
                                     style={{
                                       fontSize: "12px",
@@ -178,4 +180,4 @@ class Info extends React.Component {
   }
 }
 
-export default Info;
+export default info;
