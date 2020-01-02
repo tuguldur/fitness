@@ -3,6 +3,7 @@ import info from "views/info.jsx";
 import users from "views/users.jsx";
 import extension from "views/extension.jsx";
 import service from "views/service.jsx";
+import type from "views/type.jsx";
 
 var dashRoutes = [
   {
@@ -33,7 +34,7 @@ var dashRoutes = [
     path: "/type",
     name: "Төрөл",
     icon: "design_bullet-list-67",
-    component: Blank
+    component: type
   },
   {
     path: "/calculate",
