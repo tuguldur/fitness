@@ -179,5 +179,4 @@ class info extends React.Component {
     );
   }
 }
-
 export default info;

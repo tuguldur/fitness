@@ -195,5 +195,4 @@ class extension extends React.Component {
     );
   }
 }
-
 export default extension;
