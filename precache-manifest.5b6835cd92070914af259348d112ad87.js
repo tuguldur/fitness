@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "921f48fc4baa245108f03845733034ba",
+    "revision": "2aa53a4e116cf914a3e8e1a180660edf",
     "url": "/fitness/index.html"
   },
   {
-    "revision": "7c6a1e740407069b3afe",
+    "revision": "80a867417fe0c8219433",
     "url": "/fitness/static/css/2.008f878c.chunk.css"
   },
   {
-    "revision": "224963665ca34ce9ffc7",
+    "revision": "37f89e32424ebe161fe0",
     "url": "/fitness/static/css/main.f0cf0023.chunk.css"
   },
   {
-    "revision": "7c6a1e740407069b3afe",
-    "url": "/fitness/static/js/2.937f3b66.chunk.js"
+    "revision": "80a867417fe0c8219433",
+    "url": "/fitness/static/js/2.b2a89939.chunk.js"
   },
   {
-    "revision": "224963665ca34ce9ffc7",
-    "url": "/fitness/static/js/main.38b98174.chunk.js"
+    "revision": "37f89e32424ebe161fe0",
+    "url": "/fitness/static/js/main.67513b5e.chunk.js"
   },
   {
     "revision": "d2b896417475adc30d5f",
