@@ -2,6 +2,7 @@ import Blank from "views/Blank.jsx";
 import info from "views/info.jsx";
 import users from "views/users.jsx";
 import extension from "views/extension.jsx";
+import service from "views/service.jsx";
 
 var dashRoutes = [
   {
@@ -26,7 +27,7 @@ var dashRoutes = [
     path: "/service",
     name: "Үйлчилгээ",
     icon: "objects_support-17",
-    component: Blank
+    component: service
   },
   {
     path: "/type",
