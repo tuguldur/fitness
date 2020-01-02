@@ -16,7 +16,7 @@ import {
 } from "reactstrap";
 // core components
 import PanelHeader from "components/PanelHeader/PanelHeader.jsx";
-class Info extends React.Component {
+class info extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -180,4 +180,4 @@ class Info extends React.Component {
   }
 }
 
-export default Info;
+export default info;

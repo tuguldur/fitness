@@ -1,26 +1,26 @@
 import Blank from "views/Blank.jsx";
-import Info from "views/Info.jsx";
-import Users from "views/Users.jsx";
-import Extension from "views/Extension.jsx";
+import info from "views/info.jsx";
+import users from "views/users.jsx";
+import extension from "views/extension.jsx";
 
 var dashRoutes = [
   {
     path: "/info",
     name: "Мэдээлэл шалгах",
     icon: "shopping_credit-card",
-    component: Info
+    component: info
   },
   {
     path: "/users",
     name: "Хэрэглэгч",
     icon: "users_single-02",
-    component: Users
+    component: users
   },
   {
     path: "/extension",
     name: "Сунгалт",
     icon: "arrows-1_refresh-69",
-    component: Extension
+    component: extension
   },
   {
     path: "/service",

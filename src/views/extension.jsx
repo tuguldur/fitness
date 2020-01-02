@@ -18,7 +18,7 @@ import {
 
 // core components
 import PanelHeader from "components/PanelHeader/PanelHeader.jsx";
-class Extension extends React.Component {
+class extension extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -196,4 +196,4 @@ class Extension extends React.Component {
   }
 }
 
-export default Extension;
+export default extension;
