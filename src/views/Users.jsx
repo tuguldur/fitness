@@ -21,7 +21,7 @@ import {
 } from "reactstrap";
 // core components
 import PanelHeader from "components/PanelHeader/PanelHeader.jsx";
-class users extends React.Component {
+class Users extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -231,4 +231,4 @@ class users extends React.Component {
     );
   }
 }
-export default users;
+export default Users;
